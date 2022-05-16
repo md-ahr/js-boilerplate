@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins-regular.ttf');
+}
+
+$color: orange;
+$font: 'poppins';
+
+body {
+    font-family: $font;
+
+    .title {
+        color: $color;
+    }
+}

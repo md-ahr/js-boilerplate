@@ -1,0 +1,71 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Frontend Project Boilerplate",
+  "private": true,
+  "main": "index.js",
+  "browserslist": [
+    "Chrome > 20",
+    "ChromeAndroid > 20",
+    "Firefox > 20",
+    "FirefoxAndroid > 20",
+    "iOS > 6",
+    "Opera >= 15",
+    "safari > 6",
+    "Edge >= 12"
+  ],
+  "scripts": {
+    "dev": "set NODE_ENV=development&& webpack --watch --config=./webpack/webpack.config.js",
+    "build": "set NODE_ENV=production&& webpack --config=./webpack/webpack.config.js",
+    "lint": "npm i -D prettier && npm i -D babel-eslint && npx install-peerdeps --dev eslint-config-airbnb && npm i -D eslint-config-prettier eslint-plugin-prettier"
+  },
+  "keywords": [
+    "html5 template",
+    "javascript template",
+    "html5 boilerplate",
+    "javascript boilerplate",
+    "boilerplate",
+    "webpack configure",
+    "project bootstrapping"
+  ],
+  "author": "Abdul Halim",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/md-ahr/js-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/md-ahr/js-boilerplate/issues"
+  },
+  "homepage": "https://github.com/md-ahr/js-boilerplate#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/preset-env": "^7.17.10",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.5",
+    "clean-css": "^5.3.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-sass": "^7.0.1",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.5.0",
+    "prettier": "^2.6.2",
+    "sass-loader": "^12.6.0",
+    "terser-webpack-plugin": "^5.3.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-merge": "^5.8.0"
+  }
+}
