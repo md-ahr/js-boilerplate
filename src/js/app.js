@@ -2,7 +2,11 @@ require.context("../images", false);
 require.context("../images/svg", false);
 
 import "../scss/app.scss";
+import Calculator from "./modules/Calculator";
 
-console.log("hello");
+let calc = new Calculator(10, 2);
 
-$("body").append("...");
+console.log(`Sum: ${calc.sum()}`);
+console.log(`Sub: ${calc.sub()}`);
+console.log(`Mult: ${calc.mult()}`);
+console.log(`Div: ${calc.div()}`);

@@ -1,0 +1,13 @@
+.flex-wrapper {
+  margin-top: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    margin-left: 0.25em;
+    color: $primary;
+    font-size: 3rem;
+    font-family: $poppins-medium;
+  }
+}

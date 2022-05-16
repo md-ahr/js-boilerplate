@@ -1,15 +1,30 @@
-@font-face {
-    font-family: 'poppins';
-    src: url('../fonts/poppins-regular.ttf');
-}
+// Abstracts
+@import "abstracts/variables";
+@import "abstracts/mixins";
 
-$color: orange;
-$font: 'poppins';
+// Vendors
+@import "vendors/bootstrap";
 
-body {
-    font-family: $font;
+// Helpers
+@import "helpers/functions";
+@import "helpers/media-query";
 
-    .title {
-        color: $color;
-    }
-}
+// Base
+@import "base/reset";
+@import "base/typography";
+
+// Layout
+@import "layout/navigation";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+
+// Components
+@import "components/button";
+
+// Pages
+@import "pages/home";
+
+// Themes
+@import "themes/theme";
