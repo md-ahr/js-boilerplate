@@ -4,10 +4,38 @@
   align-items: center;
   justify-content: center;
 
+  img {
+    width: 36px;
+
+    @include tablet {
+      width: 48px;
+    }
+
+    @include laptop {
+      width: 56px;
+    }
+
+    @include desktop {
+      width: 72px;
+    }
+  }
+
   .title {
     margin-left: 0.25em;
     color: $primary;
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-family: $poppins-medium;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+
+    @include laptop {
+      font-size: 2.5rem;
+    }
+
+    @include desktop {
+      font-size: 3rem;
+    }
   }
 }

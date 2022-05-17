@@ -1,4 +1,6 @@
 // Colors
+$white: #fff;
+$dark: #000;
 $primary: #47c85e;
 
 // Font Family
@@ -8,3 +10,8 @@ $poppins-medium: "poppins-medium";
 $poppins-regular: "poppins-regular";
 $poppins-light: "poppins-light";
 $poppins-thin: "poppins-thin";
+
+// Z Index
+$z-index-low: 1000;
+$z-index-medium: $z-index-low + 20;
+$z-index-high: $z-index-medium + 20;

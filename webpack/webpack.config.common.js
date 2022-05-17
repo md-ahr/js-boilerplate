@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -33,6 +34,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.css$/,
+        loader: "css-loader",
+      },
+      {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: "asset/resource",
         generator: {
@@ -62,6 +67,10 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: "./css/[name].bundle.css",
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
     }),
   ],
 };

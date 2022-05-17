@@ -1,12 +1,19 @@
 require.context("../images", false);
 require.context("../images/svg", false);
 
+import "@popperjs/core";
+import "bootstrap";
 import "../scss/app.scss";
 import Calculator from "./modules/Calculator";
 
-let calc = new Calculator(10, 2);
+const a = 10;
+const b = 2;
 
-console.log(`Sum: ${calc.sum()}`);
-console.log(`Sub: ${calc.sub()}`);
-console.log(`Mult: ${calc.mult()}`);
-console.log(`Div: ${calc.div()}`);
+let calc = new Calculator(a, b);
+
+$("#btn-action").on("click", () => {
+  $("#sum").text(`Summation of ${a} and ${b} is: ${calc.sum()}`);
+  $("#sub").text(`Substraction of ${a} and ${b} is: ${calc.sub()}`);
+  $("#mult").text(`Multiplication of ${a} and ${b} is: ${calc.mult()}`);
+  $("#div").text(`Division of ${a} and ${b} is: ${calc.div()}`);
+});
