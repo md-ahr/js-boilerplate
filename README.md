@@ -60,14 +60,158 @@ Build for production
 
 ## Usage/Examples
 
-###### Demo code
+###### Folder Structure
 
 ```javascript
-import Component from "my-project";
+.vscode
+ ┗ settings.json
+public
+ ┗ index.html
+src
+ ┣ assets
+ ┃ ┣ fonts
+ ┃ ┃ ┗ poppins
+ ┃ ┃ ┃ ┣ Poppins-Bold.ttf
+ ┃ ┃ ┃ ┣ Poppins-Light.ttf
+ ┃ ┃ ┃ ┣ Poppins-Medium.ttf
+ ┃ ┃ ┃ ┣ Poppins-Regular.ttf
+ ┃ ┃ ┃ ┣ Poppins-SemiBold.ttf
+ ┃ ┃ ┃ ┗ Poppins-Thin.ttf
+ ┃ ┗ images
+ ┃ ┃ ┣ svg
+ ┃ ┃ ┃ ┗ icon-speaker.svg
+ ┃ ┃ ┗ bar_icon_active.png
+ ┣ js
+ ┃ ┣ modules
+ ┃ ┃ ┗ Calculator.js
+ ┃ ┗ app.js
+ ┗ scss
+ ┃ ┣ abstracts
+ ┃ ┃ ┣ _mixins.scss
+ ┃ ┃ ┗ _variables.scss
+ ┃ ┣ base
+ ┃ ┃ ┣ _reset.scss
+ ┃ ┃ ┗ _typography.scss
+ ┃ ┣ components
+ ┃ ┃ ┗ _button.scss
+ ┃ ┣ helpers
+ ┃ ┃ ┣ _functions.scss
+ ┃ ┃ ┗ _media-query.scss
+ ┃ ┣ layout
+ ┃ ┃ ┣ _footer.scss
+ ┃ ┃ ┣ _grid.scss
+ ┃ ┃ ┣ _header.scss
+ ┃ ┃ ┣ _navigation.scss
+ ┃ ┃ ┗ _sidebar.scss
+ ┃ ┣ pages
+ ┃ ┃ ┗ _home.scss
+ ┃ ┣ themes
+ ┃ ┃ ┗ _theme.scss
+ ┃ ┗ app.scss
+webpack
+ ┣ webpack.config.common.js
+ ┣ webpack.config.dev.js
+ ┣ webpack.config.js
+ ┗ webpack.config.prod.js
+.babelrc
+.eslintrc
+.gitignore
+package-lock.json
+package.json
+postcss-preset-env.js
+README.md
+```
 
-function App() {
-  return <Component />;
+###### webpack/webpack.config.js
+
+```javascript
+const envConfig =
+  process.env.NODE_ENV === "production"
+    ? require("./webpack.config.prod.js")
+    : require("./webpack.config.dev.js");
+```
+
+###### webpack/webpack.config.common.js
+
+```javascript
+entry: {
+  app: path.resolve(__dirname, "../src", "js/app.js"),
+},
+```
+
+###### src/scss/base/\_typography.scss
+
+```javascript
+@font-face {
+  font-family: "poppins-semibold";
+  src: url("../assets/fonts/poppins/Poppins-SemiBold.ttf");
 }
+
+@font-face {
+  font-family: "poppins-medium";
+  src: url("../assets/fonts/poppins/Poppins-Medium.ttf");
+}
+```
+
+###### src/scss/helpers/\_media-query.scss
+
+```javascript
+$breakpoints:('mobile': (min-width: 360px),
+  'largeMobile': (min-width: 425px),
+  'xlMobile': (min-width: 600px),
+  'tablet': (min-width: 768px),
+  'smallLaptop': (min-width: 992px),
+  'laptop': (min-width: 1200px),
+  'desktop': (min-width: 1400px)
+);
+@mixin respondScreen($screen) {
+  @if map-has-key($breakpoints, $screen) {
+    @media #{inspect(map-get($breakpoints, $screen))} {
+      @content;
+    }
+  }
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$screen}`. ";
+  }
+}
+```
+
+###### src/scss/app.scss
+
+```javascript
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+// Abstracts
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+// Vendors - If Needed
+@import "vendors/*.css";
+
+// Base
+@import "base/reset";
+@import "base/typography";
+
+// Helpers
+@import "helpers/functions";
+@import "helpers/media-query";
+
+// Layout
+@import "layout/navigation";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+
+// Components
+@import "components/button";
+
+// Pages
+@import "pages/home";
+
+// Themes
+@import "themes/theme";
+
 ```
 
 ## Roadmap
