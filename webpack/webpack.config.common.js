@@ -41,21 +41,21 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: "asset/resource",
         generator: {
-          filename: "./images/[name][ext]",
+          filename: "./assets/images/[name][ext]",
         },
       },
       {
         test: /\.svg$/i,
         type: "asset/resource",
         generator: {
-          filename: "./images/svg/[name][ext]",
+          filename: "./assets/images/svg/[name][ext]",
         },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
         generator: {
-          filename: "./fonts/[name][ext]",
+          filename: "./assets/fonts/[name][ext]",
           publicPath: "/",
         },
       },

@@ -1,5 +1,5 @@
-require.context("../images", false);
-require.context("../images/svg", false);
+require.context("../assets/images", false);
+require.context("../assets/images/svg", false);
 
 import "@popperjs/core";
 import "bootstrap";
