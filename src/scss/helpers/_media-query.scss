@@ -1,67 +1,21 @@
-$mobile: 360px;
-$lg-mobile: 425px;
-$xl-mobile: 600px;
-$tablet: 768px;
-$sm-laptop: 992px;
-$laptop: 1200px;
-$desktop: 1400px;
+// breakpoints
+$breakpoints:('mobile': (min-width: 360px),
+  'largeMobile': (min-width: 425px),
+  'xlMobile': (min-width: 600px),
+  'tablet': (min-width: 768px),
+  'smallLaptop': (min-width: 992px),
+  'laptop': (min-width: 1200px),
+  'desktop': (min-width: 1400px));
 
-@mixin mobile {
-  @media (min-width: #{$mobile}) {
-    @content;
+// crud modal
+@mixin respondScreen($screen) {
+  @if map-has-key($breakpoints, $screen) {
+    @media #{inspect(map-get($breakpoints, $screen))} {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$screen}`. ";
   }
 }
-
-@mixin largeMobile {
-  @media (min-width: #{$lg-mobile}) {
-    @content;
-  }
-}
-
-@mixin xlMobile {
-  @media (min-width: #{$xl-mobile}) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (min-width: #{$tablet}) {
-    @content;
-  }
-}
-
-@mixin smallLaptop {
-  @media (min-width: #{$sm-laptop}) {
-    @content;
-  }
-}
-
-@mixin laptop {
-  @media (min-width: #{$laptop}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: #{$desktop}) {
-    @content;
-  }
-}
-
-// $breakpoints: (
-//   mobile: 360px,
-//   lgMobile: 425px,
-//   xlMobile: 600px,
-//   tablet: 768px,
-//   smlaptop: 992px,
-//   laptop: 1200px,
-//   desktop: 1400px,
-// );
-
-// @each $device, $break in $breakpoints {
-//   @mixin #{$device} {
-//     @media (min-width: #{$break}) {
-//       @content;
-//     }
-//   }
-// }
