@@ -1,6 +1,6 @@
 {
   "name": "next-gen-boilerplate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Frontend Project Boilerplate",
   "main": "index.js",
   "browserslist": [

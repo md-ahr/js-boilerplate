@@ -22,16 +22,16 @@ A simple html5 boilerplate with modern javascript support.
 
 ## Run Locally
 
-Clone the project
+Download the project
 
 ```bash
-  git clone https://github.com/md-ahr/js-boilerplate.git
+  npx next-gen-boilerplate project-name
 ```
 
 Go to the project directory
 
 ```bash
-  cd js-boilerplate-master
+  cd project-name
 ```
 
 Install dependencies
