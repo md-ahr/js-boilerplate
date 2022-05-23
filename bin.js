@@ -4,13 +4,10 @@ const { execSync } = require("child_process");
 
 const runCommand = (command) => {
   try {
-    execSync(`${command}`, { stdio: "inherit" });
-  } catch (error) {
-    console.error(`Failed to execute ${command}`, error);
-    return false;
-  }
-  return true;
-};
+    console.log("Downloading files...");
+    execSync(`git clone ${git_repo} ${projectPath}`);
+
+    process.chdir(projectPath);
 
 const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/md-ahr/next-gen-boilerplate ${repoName}`;
