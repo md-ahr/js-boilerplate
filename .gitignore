@@ -36,3 +36,6 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# bin configuration file
+bin.js

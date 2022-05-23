@@ -122,16 +122,7 @@ postcss-preset-env.js
 README.md
 ```
 
-###### webpack/webpack.config.js
-
-```javascript
-const envConfig =
-  process.env.NODE_ENV === "production"
-    ? require("./webpack.config.prod.js")
-    : require("./webpack.config.dev.js");
-```
-
-###### webpack/webpack.config.common.js
+###### Include new javascript file
 
 ```javascript
 entry: {
@@ -139,21 +130,7 @@ entry: {
 },
 ```
 
-###### src/scss/base/\_typography.scss
-
-```javascript
-@font-face {
-  font-family: "poppins-semibold";
-  src: url("../assets/fonts/poppins/Poppins-SemiBold.ttf");
-}
-
-@font-face {
-  font-family: "poppins-medium";
-  src: url("../assets/fonts/poppins/Poppins-Medium.ttf");
-}
-```
-
-###### src/scss/helpers/\_media-query.scss
+###### Advance media query setup using sass
 
 ```javascript
 $breakpoints:('mobile': (min-width: 360px),
@@ -176,7 +153,7 @@ $breakpoints:('mobile': (min-width: 360px),
 }
 ```
 
-###### src/scss/app.scss
+###### Include all scss files
 
 ```javascript
 @import '~bootstrap/dist/css/bootstrap.min.css';
