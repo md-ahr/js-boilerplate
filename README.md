@@ -46,13 +46,13 @@ Install dependencies for linting support
   npm run lint
 ```
 
-Start the developemnt server
+Start the developemnt server, http://localhost:3000
 
 ```bash
-  npm run dev
+  npm run start
 ```
 
-Build for production
+Build for production, project will build on dist directory
 
 ```bash
   npm run build

@@ -56,7 +56,6 @@ module.exports = {
         type: "asset/resource",
         generator: {
           filename: "./assets/fonts/[name][ext]",
-          publicPath: "/",
         },
       },
     ],
